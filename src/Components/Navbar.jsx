@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoHome } from "react-icons/io5";
 import { PiFlowerTulipDuotone, PiGooglePhotosLogo } from "react-icons/pi";
 import { RiFolderUserFill } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
+    const{user,logOut} = useContext(AuthContext)
     const [theme,setTheme] = useState('light');
     useEffect(()=>{
         localStorage.setItem('theme',theme);
@@ -28,6 +30,11 @@ const Navbar = () => {
     <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="addCraft"><IoIosAddCircle /> Add Craft Item</NavLink>
     <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/myList"><RiFolderUserFill /> My Art&Craft List</NavLink>
     </>
+
+    const handleLogOut = ()=>{
+      logOut();
+    }
+
     return (
         <div className="navbar font-lato shadow-sm shadow-orange-400">
   <div className="navbar-start">
@@ -55,9 +62,23 @@ const Navbar = () => {
   <input onChange={handleTheme} type="checkbox" value="synthwave" className="toggle theme-controller text-orange-400"/>
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </label>
-    <Link to="/login" className="btn bg-orange-400 hover:bg-orange-500 text-white">Login</Link>
-    {/* <Link to="/login" className="btn">Register</Link> */}
-  </div>
+
+     <div>
+      {
+        user?
+        <div className="flex gap-2 items-center">
+          <div className="w-10 h-10 rounded-full border border-orange-400">
+          <img className="w-full h-full rounded-full object-cover" src={user?.photoURL} alt="" />
+          </div>
+          <Link onClick={handleLogOut} to="/login" className="btn bg-orange-400 hover:bg-orange-500 text-white">Sign out</Link>
+        </div> 
+
+       
+        :
+        <Link to="/login" className="btn bg-orange-400 hover:bg-orange-500 text-white">Login</Link>
+      }
+     </div>
+     </div>
 </div>
     );
 };
