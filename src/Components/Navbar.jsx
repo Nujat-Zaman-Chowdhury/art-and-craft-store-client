@@ -5,6 +5,8 @@ import { PiFlowerTulipDuotone, PiGooglePhotosLogo } from "react-icons/pi";
 import { RiFolderUserFill } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 
 const Navbar = () => {
@@ -67,8 +69,9 @@ const Navbar = () => {
       {
         user?
         <div className="flex gap-2 items-center">
-          <div className="w-10 h-10 rounded-full border border-orange-400">
-          <img className="w-full h-full rounded-full object-cover" src={user?.photoURL} alt="" />
+          <div className="w-10 h-10 rounded-full border border-orange-400 cursor-pointer" data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}>
+          <img  className="w-full h-full rounded-full object-cover" src={user?.photoURL} alt="" />
+          <Tooltip id="my-tooltip" />
           </div>
           <Link onClick={handleLogOut} to="/login" className="btn bg-orange-400 hover:bg-orange-500 text-white">Sign out</Link>
         </div> 
