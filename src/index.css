@@ -15,3 +15,7 @@
 .font-workSans{
     font-family: "Work Sans", sans-serif;
 }
+
+.dark-mode .text-[#333] {
+    color: #fff;
+}

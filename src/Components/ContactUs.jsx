@@ -2,7 +2,7 @@ import { FaFacebook, FaGithub, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 const ContactUs = () => {
   return (
-    <div className="bg-white md:p-10 shadow-lg shadow-orange-500 ">
+    <div className=" md:p-10 shadow-sm shadow-orange-500 ">
       <div className="my-10 ">
         <div className="bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('Contact.jpg')] h-full lg:h-[500px] bg-cover bg-center rounded-md ">
           <div className="flex flex-col md:flex-row lg:justify-center gap-3  h-full">
