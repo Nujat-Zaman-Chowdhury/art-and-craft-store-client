@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 import Lottie from "lottie-react";
+import { Rings } from "react-loader-spinner";
 
 
 
@@ -10,7 +11,15 @@ const ProtectedRoute = ({children}) => {
     const location = useLocation();
     console.log(location);
     if(loading){
-        return <div><Lottie animationData="Animation - 1714126431082.json" loop={true} /></div>
+        return <div><Rings
+            visible={true}
+            height="80"
+            width="80"
+            color="#4fa94d"
+            ariaLabel="rings-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            /></div>
     }
 
     if(user){

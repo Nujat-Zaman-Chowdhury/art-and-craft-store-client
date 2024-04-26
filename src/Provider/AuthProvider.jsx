@@ -14,10 +14,12 @@ const AuthProvider = ({children}) => {
 
     //register
     const createUser = (email,password) =>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const updateUserProfile = (name,photo)=>{
+       
        return updateProfile(auth.currentUser, {
             displayName:name, photoURL: photo
           })
@@ -25,15 +27,18 @@ const AuthProvider = ({children}) => {
 
     //login
     const loginUSer = (email,password) =>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     //google log in
     const googleLogIn = ()=>{
+        setLoading(true)
        return signInWithPopup(auth, googleProvider)
     }
     //github login
     const githubLogIn = () =>{
+        setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
 
@@ -45,6 +50,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            setLoading(false)
           });
 
          return ()=>{unSubscribe();} 
