@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import animationData from "../assets/Animation - 1714116146478.json"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -9,6 +9,9 @@ import { toast } from "react-toastify";
 const Register = () => {
     const {createUser,updateUserProfile,logOut} = useContext(AuthContext)
     const [error,setError] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || "/";
     const handleSubmit = e =>{
         e.preventDefault();
         const form = e.target;
@@ -40,8 +43,9 @@ const Register = () => {
         .then(result=>{
             updateUserProfile(name,photo)
             .then(()=>{
+                navigate(from)
             toast("Register Successfully");
-            console.log(result.user);
+            // console.log(result.user);
             })
             logOut();
             }

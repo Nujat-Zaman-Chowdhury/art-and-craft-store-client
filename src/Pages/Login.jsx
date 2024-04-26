@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import animationData from "../assets/Animation - 1714109777074.json"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
@@ -9,7 +9,9 @@ import { toast } from "react-toastify";
 const Login = () => {
     const {loginUSer,googleLogIn,githubLogIn} = useContext(AuthContext)
     const [error,setError] = useState('')
-
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || "/";
     const handleSubmit = e =>{
         e.preventDefault();
         const form = e.target;
@@ -18,8 +20,13 @@ const Login = () => {
 
         loginUSer(email,password)
         .then(result=>{
+            if(result.user)
+            {
+                navigate(from)
+            }
             toast("Login Successfully")
             console.log(result.user);
+            navigate(from)
         })
         .catch(error=>{
             setError(error.code.split('/')[1])
@@ -34,12 +41,20 @@ const Login = () => {
     const handleGoogleLogin = () =>{
         googleLogIn()
         .then(result=>{
+            if(result.user)
+            {
+                navigate(from)
+            }
             toast('Login Successful')
         })
     }
     const handleGithubLogin = () =>{
         githubLogIn()
         .then(result=>{
+            if(result.user)
+            {
+                navigate(from)
+            }
             toast('Login Successful')
         })
     }

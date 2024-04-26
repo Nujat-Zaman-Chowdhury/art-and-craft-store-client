@@ -30,7 +30,7 @@ const Navbar = () => {
     <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/"><IoHome /> Home</NavLink>
     <NavLink  className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/allArtCraft"><PiGooglePhotosLogo /> All Art & craft Items</NavLink>
     <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="addCraft"><IoIosAddCircle /> Add Craft Item</NavLink>
-    <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/myList"><RiFolderUserFill /> My Art&Craft List</NavLink>
+    <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/my-art-and-craft"><RiFolderUserFill /> My Art&Craft List</NavLink>
     </>
 
     const handleLogOut = ()=>{

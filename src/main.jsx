@@ -10,6 +10,8 @@ import AllArtCraft from './Pages/AllArtCraft.jsx'
 import Login from './Pages/Login.jsx'
 import Register from './Pages/Register.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
+import ProtectedRoute from './Routes/ProtectedRoute.jsx';
+import MyArtCraftList from './Pages/MyArtCraftList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/my-art-and-craft',
+        element:<ProtectedRoute><MyArtCraftList></MyArtCraftList></ProtectedRoute>
       }
     ]
   }
