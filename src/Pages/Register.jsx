@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Register = () => {
     return (
         <div>
-            <div className="flex flex-col justify-around md:flex-row md:gap-8 mx-auto px-12 bg-orange-100">
+            <div className="flex flex-col-reverse justify-around md:flex-row md:gap-8 mx-auto md:px-12 bg-orange-100">
             
-            <div className=" bg-white rounded shadow-lg shadow-orange-200 my-5 md:p-8 w-[500px]">
-                <h2 className="font-bold font-lato text-xl md:text-3xl border-b-4 border-spacing-2 w-8 border-orange-500 dark:text-black">Register</h2>
+            <div className=" bg-white rounded shadow-lg shadow-orange-200 my-5 p-8 w-full md:w-[500px]">
+                <h2 className="font-bold font-lato text-xl md:text-3xl border-b-4 border-spacing-2 w-16 border-orange-500 dark:text-black">Register</h2>
                 <p className="my-3 font-workSans text-black">Register to your account to access all features</p>
                 <form className="space-y-3">
                 <div className="">
@@ -68,17 +68,17 @@ const Register = () => {
                   </fieldset>
                 </div>
                 <div className="w-full">
-                    <button className="btn mt-4 text-center w-1/3 bg-orange-500 hover:bg-orange-600 text-white font-medium font-workSans border-0">Login</button>
+                    <button className="btn mt-4 text-center w-1/3 bg-orange-500 hover:bg-orange-600 text-white font-medium font-workSans border-0">Register</button>
                 </div>
                 </form>
                 
                
                 <div className="my-4 font-lato font-medium font-workSans text-center">
-                    Already a member? Please <Link to="/register" className="text-orange-400">Login</Link>
+                    Already a member? Please <Link to="/login" className="text-orange-400">Login</Link>
                 </div>
                 
             </div>
-            <div className="flex items-center justify-center w-[500px]">
+            <div className="flex items-center justify-center w-full md:w-[500px]">
             <Lottie animationData={animationData} loop={true} />
             </div>
         </div>
