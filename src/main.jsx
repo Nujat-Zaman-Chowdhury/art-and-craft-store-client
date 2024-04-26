@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './MainLayout/Root.jsx'
 import Home from './Pages/Home.jsx'
 import AllArtCraft from './Pages/AllArtCraft.jsx'
+import Login from './Pages/Login.jsx'
+import Register from './Pages/Register.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       {
         path:'/allArtCraft',
         element:<AllArtCraft></AllArtCraft>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
       }
     ]
   }
