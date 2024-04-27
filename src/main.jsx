@@ -37,7 +37,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/my-art-and-craft',
-        element:<ProtectedRoute><MyArtCraftList></MyArtCraftList></ProtectedRoute>
+        element:<ProtectedRoute><MyArtCraftList></MyArtCraftList></ProtectedRoute>,
+        loader: ()=>fetch('http://localhost:5000/crafts')
       },
       {
         path:'/addCraftItem',

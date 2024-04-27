@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
-import Lottie from "lottie-react";
 import { Rings } from "react-loader-spinner";
 
 

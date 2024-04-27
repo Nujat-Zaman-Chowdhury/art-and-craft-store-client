@@ -1,10 +1,44 @@
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const AddCraftPage = () => {
+    const {user} = useContext(AuthContext);
+
+    const handleAdd = e =>{
+        e.preventDefault();
+        const form = e.target;
+        const name = user?.displayName;
+        const email = user?.email;
+        const image = form.image.value;
+        const itemName = form.item_name.value;
+        const subcategory = form.subcategory.value;
+        const shortDescription = form.short_description.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const customization = form.customization.value;
+        const processingTime = form.processing_time.value;
+        const stockStatus = form.stock_status.value;
+        const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
+
+        fetch('http://localhost:5000/crafts',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newItem)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            toast.success("Added Successfully")
+            console.log(data);
+        })
+    }
     return (
         <div className="bg-[#FCFFE0] p-20">
         <h2 className="text-xl md:text-3xl font-extrabold font-lato text-center mb-10">Welcome to our Add Craft Item page!</h2>
-        <form>
+        <form onSubmit={handleAdd}>
           {/* from row- username and email*/}
 
           <div className="md:flex  gap-5 mb-6">
@@ -13,7 +47,7 @@ const AddCraftPage = () => {
                   <span className="label-text text-lg">User Name</span>
               </label>
               <label className="input-group">
-                  <input type="text" name="user_name" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow " placeholder="User Name"/>
+                  <input type="text" name="user_name" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow " defaultValue={user.displayName} readOnly />
               </label>
           </div> 
           <div className="form-control md:w-1/2">
@@ -21,7 +55,7 @@ const AddCraftPage = () => {
                   <span className="label-text text-lg">User Email</span>
               </label>
               <label className="input-group">
-                  <input type="email" name="user_email" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow" placeholder="User Email"/>
+                  <input type="email" name="user_email" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow" defaultValue={user.email} readOnly/>
               </label>
           </div> 
           </div> 
@@ -54,7 +88,7 @@ const AddCraftPage = () => {
                   <span className="label-text text-lg">Subcategory Name</span>
               </label>
               <label className="input-group">
-                  <select name="customization" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow">
+                  <select name="subcategory" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow">
                   <option value="" selected disabled hidden>Select</option>
                     <option value="embroidery">Embroidery</option>
                     <option value="knitting">Knitting & Crocheting</option>
