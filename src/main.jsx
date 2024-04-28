@@ -14,10 +14,13 @@ import ProtectedRoute from './Routes/ProtectedRoute.jsx';
 import MyArtCraftList from './Pages/MyArtCraftList.jsx';
 import AddCraftPage from './Pages/AddCraftPage.jsx';
 import UpdateCraft from './Components/UpdateCraft.jsx';
+import NotFoundPage from './Components/NotFoundPage.jsx';
+
 
 const router = createBrowserRouter([
   {
     path:'/',
+    errorElement:<NotFoundPage></NotFoundPage>,
     element:<Root></Root>,
     children:[
       {
@@ -44,13 +47,12 @@ const router = createBrowserRouter([
         path:'/addCraftItem',
         element:<ProtectedRoute><AddCraftPage></AddCraftPage></ProtectedRoute>
       },
-      // {
-      //   path:'/updateCraft/:id',
-      //   element:<UpdateCraft></UpdateCraft>
-      // },
       {
-
+        path:'/updateCraft/:id',
+        element:<ProtectedRoute><UpdateCraft></UpdateCraft></ProtectedRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/crafts/${params.email}/${params.id}`)
       }
+      
     ]
   }
 ])

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Select, Option } from "@material-tailwind/react";
+
 import {
     Card,
     CardHeader,
@@ -9,7 +9,8 @@ import {
     IconButton,
   } from "@material-tailwind/react";
 import Swal from "sweetalert2";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
+
 
 //   const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
 const MyArtCraftList = () => {
@@ -97,10 +98,10 @@ const MyArtCraftList = () => {
                 filteredCrafts.map(craft=>(
                     <Card key={craft._id} className="w-full  shadow-lg">
       <CardHeader floated={false} color="blue-gray">
-        <div className="flex justify-center py-4">
+        <div className="flex justify-center py-4 h-[300px]">
         <img
           src={craft.image}
-          className="rounded-md w-[250px] h-[200px] object-cover"
+          className="rounded-md w-[250px] object-center  object-cover"
           alt="ui/ux review check"
         />
         </div>
@@ -166,9 +167,9 @@ const MyArtCraftList = () => {
         
       </CardBody>
       <div className="flex flex-grow justify-center gap-4  my-4 items-end">
-        <Link to={`/updateCraft/${craft._id}`}>
-        <button className="btn border border-orange-400 text-orange-400 bg-transparent hover:bg-orange-400 hover:text-white">Update</button>
-        </Link>
+       
+        <Link to={`/updateCraft/${craft._id}`} className="btn border border-orange-400 text-orange-400 bg-transparent hover:bg-orange-400 hover:text-white">Update</Link>
+        
         <button onClick={()=>handleDelete(craft._id)} className="btn border border-red-500 text-red-500 bg-transparent hover:bg-red-500 hover:text-white">Delete</button>
        </div>
     </Card>
