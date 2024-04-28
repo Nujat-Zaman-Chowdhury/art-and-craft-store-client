@@ -34,6 +34,8 @@ const AddCraftPage = () => {
             toast.success("Added Successfully")
             console.log(data);
         })
+
+        form.reset();
     }
     return (
         <div className="bg-[#FCFFE0] p-20">
@@ -160,8 +162,8 @@ const AddCraftPage = () => {
               <label className="input-group">
                   <select name="stock_status" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow">
                   <option value="" selected disabled hidden>Status</option>
-                    <option value="in_stock">In Stock</option>
-                    <option value="made_to_order">Made To Order</option>
+                    <option value="In stock">In Stock</option>
+                    <option value="Made to order">Made To Order</option>
                     </select>
               </label>
           </div>

@@ -13,6 +13,7 @@ import AuthProvider from './Provider/AuthProvider.jsx'
 import ProtectedRoute from './Routes/ProtectedRoute.jsx';
 import MyArtCraftList from './Pages/MyArtCraftList.jsx';
 import AddCraftPage from './Pages/AddCraftPage.jsx';
+import UpdateCraft from './Components/UpdateCraft.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,12 +38,18 @@ const router = createBrowserRouter([
       },
       {
         path:'/my-art-and-craft',
-        element:<ProtectedRoute><MyArtCraftList></MyArtCraftList></ProtectedRoute>,
-        loader: ()=>fetch('http://localhost:5000/crafts')
+        element:<ProtectedRoute><MyArtCraftList></MyArtCraftList></ProtectedRoute>
       },
       {
         path:'/addCraftItem',
         element:<ProtectedRoute><AddCraftPage></AddCraftPage></ProtectedRoute>
+      },
+      // {
+      //   path:'/updateCraft/:id',
+      //   element:<UpdateCraft></UpdateCraft>
+      // },
+      {
+
       }
     ]
   }
