@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
 
@@ -8,7 +9,7 @@ const AllArtCraft = () => {
       fetch('http://localhost:5000/crafts')
       .then(res=>res.json())
       .then(data=>{
-        console.log(data);
+        // console.log(data);
         setAllCrafts(data);
       })
     },[])
@@ -36,7 +37,7 @@ const AllArtCraft = () => {
         <td>{craft.subcategory}</td>
         <td>{craft.price}</td>
         <td>{craft.email}</td>
-        <td><button className="btn text-orange-400 bg-transparent border-orange-500 hover:bg-transparent">View Details</button></td>
+        <td><Link to={`/viewDetails/${craft._id}`}><button  className="btn text-orange-400 bg-transparent border-orange-500 hover:bg-transparent">View Details</button></Link></td>
       </tr>
         ))
       }

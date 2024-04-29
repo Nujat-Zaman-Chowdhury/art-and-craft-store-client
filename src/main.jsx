@@ -15,6 +15,7 @@ import MyArtCraftList from './Pages/MyArtCraftList.jsx';
 import AddCraftPage from './Pages/AddCraftPage.jsx';
 import UpdateCraft from './Components/UpdateCraft.jsx';
 import NotFoundPage from './Components/NotFoundPage.jsx';
+import ViewDetailsPage from './Components/ViewDetailsPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         path:'/updateCraft/:id',
         element:<ProtectedRoute><UpdateCraft></UpdateCraft></ProtectedRoute>,
         loader:({params})=>fetch(`http://localhost:5000/crafts/${params.email}/${params.id}`)
+      },
+      {
+        path:'/viewDetails/:id',
+        element:<ProtectedRoute><ViewDetailsPage></ViewDetailsPage></ProtectedRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
       }
       
     ]
