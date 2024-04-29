@@ -29,8 +29,8 @@ const UpdateCraft = () => {
         const customization = form.customization.value;
         const processingTime = form.processing_time.value;
         const stockStatus = form.stock_status.value;
-        const updatedItem = {_id,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
-        console.log(updatedItem);
+        const updatedItem = {image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
+        // console.log(updatedItem);
 
         fetch(`http://localhost:5000/crafts/${email}/${_id}`,{
             method:'PUT',
@@ -42,13 +42,15 @@ const UpdateCraft = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log("updated");
-            Swal.fire({
-                title: 'Success!',
-                text: 'Updated Successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              })
+            console.log(data);
+            if(data.modifiedCount>0){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Updated Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
     }
     return (

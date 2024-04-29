@@ -14,7 +14,6 @@ const AuthProvider = ({children}) => {
 
     //register
     const createUser = (email,password) =>{
-        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
@@ -63,7 +62,9 @@ const AuthProvider = ({children}) => {
         logOut,
         updateUserProfile,
         googleLogIn,
-        githubLogIn
+        githubLogIn,
+        loading,
+        setLoading
     }
     return (
         <AuthContext.Provider value={authInfo}>

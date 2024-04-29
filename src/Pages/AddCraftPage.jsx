@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 
 const AddCraftPage = () => {
@@ -39,6 +41,13 @@ const AddCraftPage = () => {
     }
     return (
         <div className="bg-[#FCFFE0] p-20">
+            <HelmetProvider>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Add Craft Page - Artisanal Crafts</title>
+                <link rel="canonical" href="http://mysite.com//" />
+            </Helmet>
+            </HelmetProvider>
         <h2 className="text-xl md:text-3xl font-extrabold font-lato text-center mb-10">Welcome to our Add Craft Item page!</h2>
         <form onSubmit={handleAdd}>
           {/* from row- username and email*/}
@@ -93,10 +102,10 @@ const AddCraftPage = () => {
                   <select name="subcategory" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow">
                   <option value="" selected disabled hidden>Select</option>
                     <option value="Embroidery">Embroidery</option>
-                    <option value="Knitting_and_Croccheting">Knitting & Crocheting</option>
+                    <option value="Knitting and Crocheting">Knitting and Crocheting</option>
                     <option value="Quilting">Quilting</option>
                     <option value="Beadwork">Beadwork</option>
-                    <option value="tie_dyeing">Tie-Dyeing</option>
+                    <option value="Tie-Dyeing">Tie-Dyeing</option>
                     <option value="Macrame">Macrame</option>
                     </select>
               </label>

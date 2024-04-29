@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -25,8 +27,8 @@ const Login = () => {
                 navigate(from)
             }
             toast("Login Successfully")
-            console.log(result.user);
-            navigate(from)
+            // console.log(result.user);
+            
         })
         .catch(error=>{
             setError(error.code.split('/')[1])
@@ -45,7 +47,7 @@ const Login = () => {
             {
                 navigate(from)
             }
-            toast('Login Successful')
+            return toast('Login Successful')
         })
     }
     const handleGithubLogin = () =>{
@@ -55,13 +57,20 @@ const Login = () => {
             {
                 navigate(from)
             }
-            toast('Login Successful')
+            return toast('Login Successful')
         })
     }
 
 
     return (
         <div className="flex flex-col justify-around md:flex-row md:gap-8 mx-auto md:px-12 bg-orange-100">
+            <HelmetProvider>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Login - Artisanal Crafts</title>
+                <link rel="canonical" href="http://mysite.com//" />
+            </Helmet>
+            </HelmetProvider>
             <div className="flex items-center justify-center">
             <Lottie animationData={animationData} loop={true} />
             </div>

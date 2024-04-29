@@ -4,26 +4,22 @@ import { Link } from "react-router-dom";
 const CategoriesSection = () => {
   const [categories, setCategories] = useState([]);
 
-
-
   useEffect(() => {
     fetch("http://localhost:5000/categories")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCategories(data);
       });
   }, []);
 
 
-
-  
   return (
     <div className="container mx-auto">
       <h2 className="text-2xl md:text-4xl text-orange-500 font-lato font-bold text-center mb-6">Explore the World of Art & Craft Categories</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.map((category) => (
-          <Link to={`/crafts/${category.subcategory_name}`}
+          <Link to={`/subcategories/${category.subcategory_name}`}
           
             key={category._id}
             className="p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900 cursor-pointer"

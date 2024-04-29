@@ -43,7 +43,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/my-art-and-craft',
-        element:<ProtectedRoute><MyArtCraftList></MyArtCraftList></ProtectedRoute>
+        element:<ProtectedRoute><MyArtCraftList></MyArtCraftList></ProtectedRoute>,
+        loader: ({params}) =>fetch(`http://localhost:5000/crafts/${params.email}`) 
       },
       {
         path:'/addCraftItem',
@@ -60,10 +61,12 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:5000/crafts/viewDetails/${params.id}`)
       },
       {
-        path:'/subcategories/:subcategory',
+        path:'/subcategories/:subcategory_name',
         element:<ProtectedRoute><SubCategories></SubCategories></ProtectedRoute>,
-        // loader:({params})=>fetch(`http://localhost:5000/crafts/${params.subcategory}`)
-      }
+        loader: ({params})=>fetch(`http://localhost:5000/crafts/subcategory/${params.subcategory_name}`)
+       
+      },
+      
       
     ]
   }

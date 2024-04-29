@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+import { HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 // const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
@@ -15,6 +17,13 @@ const AllArtCraft = () => {
     },[])
     return (
         <div className="container mx-auto my-10">
+          <HelmetProvider>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>All - Artisanal Crafts</title>
+                <link rel="canonical" href="http://mysite.com//" />
+            </Helmet>
+            </HelmetProvider>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}

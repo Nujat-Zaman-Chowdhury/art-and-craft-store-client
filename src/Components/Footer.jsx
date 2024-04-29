@@ -3,9 +3,9 @@ import { PiFlowerTulipDuotone } from "react-icons/pi";
 
 const Footer = () => {
     return (
-        <footer className=" border-t-4 border-orange-400 rounded-l-[10px]  rounded-b-none rounded-r-[10px] bg-[#333]">
+        <footer className="border-t-4 border-orange-400 bg-[#333] absolute  b-0 w-full">
             <div className="mt-10 px-10 w-ful text-center">
-        <h3 className="text-2xl md:text-4xl text-orange-500 font-bold font-dancing">Artisanal <span className="text-orange-400">Crafts</span></h3>
+        <h3 className="text-2xl md:text-4xl text-orange-400 font-bold font-dancing">Artisanal <span className="text-orange-400">Crafts</span></h3>
         <div className="divider before:bg-orange-400 after:bg-orange-400"><PiFlowerTulipDuotone className="text-5xl text-orange-500 font-bold" /></div>
         </div>
 	<div className="container flex flex-col p-4 mx-auto md:p-5 lg:flex-row dark:divide-gray-600">

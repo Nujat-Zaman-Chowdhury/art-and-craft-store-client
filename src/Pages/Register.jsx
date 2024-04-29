@@ -5,6 +5,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const {createUser,updateUserProfile,logOut} = useContext(AuthContext)
@@ -44,7 +46,7 @@ const Register = () => {
             updateUserProfile(name,photo)
             .then(()=>{
                 navigate(from)
-            toast("Register Successfully");
+                return toast("Register Successfully");
             // console.log(result.user);
             })
             logOut();
@@ -57,6 +59,13 @@ const Register = () => {
     }
     return (
         <div>
+          <HelmetProvider>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Register - Artisanal Crafts</title>
+                <link rel="canonical" href="http://mysite.com//" />
+            </Helmet>
+            </HelmetProvider>
             <div className="flex flex-col-reverse justify-around md:flex-row md:gap-8 mx-auto md:px-12 bg-orange-100">
             
             <div className=" bg-white rounded shadow-lg shadow-orange-200 my-5 p-8 w-full md:w-[500px]">

@@ -10,6 +10,8 @@ import {
   } from "@material-tailwind/react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 
 //   const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
@@ -32,12 +34,12 @@ const MyArtCraftList = () => {
     const handleFilter = value =>{
         console.log(value);
         if(value === 'yes'){
-            const remainigCrafts = crafts.filter(craft=>craft.customization === value)
-            setFilteredCrafts(remainigCrafts)
+            const re = crafts.filter(craft=>craft.customization === value)
+            setFilteredCrafts(re)
         }
         else if(value === 'no'){
-            const remainigCrafts = crafts.filter(craft=>craft.customization === value)
-            setFilteredCrafts(remainigCrafts);
+            const re = crafts.filter(craft=>craft.customization === value)
+            setFilteredCrafts(re);
         }
         else{
             setFilteredCrafts(crafts)
@@ -61,11 +63,13 @@ const MyArtCraftList = () => {
                 .then(res=>res.json())
                 .then(data=>{
                     console.log(data);
-                    Swal.fire({
-                            title: "Deleted!",
-                            text: "Your Crafts item has been deleted.",
-                            icon: "success"
-                    });
+                    if(data.deletedCount>0){
+                      Swal.fire({
+                        title: "Deleted!",
+                        text: "Your Crafts item has been deleted.",
+                        icon: "success"
+                });
+                    }
                     const remainig = crafts.filter(craft=>craft._id !== _id )
                     setCrafts(remainig)
                     setFilteredCrafts(remainig);
@@ -77,6 +81,13 @@ const MyArtCraftList = () => {
 
     return (
         <div className="my-10">
+          <HelmetProvider>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>My Art and Crafts - Artisanal Crafts</title>
+                <link rel="canonical" href="http://mysite.com//" />
+            </Helmet>
+            </HelmetProvider>
             <h2 className="text-center text-2xl font-lato font-bold mb-5">My Art and Craft List</h2>
             {/* dropdown */}
 
