@@ -12,7 +12,7 @@ const ViewDetailsPage = () => {
             <div className="flex flex-col md:flex-col-reverse lg:flex-row gap-3 items-center">
             
                 <div className="border-2 border-orange-400 rounded w-1/2">
-                    <img className="h-[500px] w-full object-cover object-center" src={image} alt="" />
+                    <img className="h-[100vh] w-full object-cover object-center" src={image} alt="" />
                 </div>
                 <div className="w-1/2 bg-[#F9FAFB] p-5">
                     <div className="bg-white p-3">

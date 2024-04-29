@@ -16,6 +16,7 @@ import AddCraftPage from './Pages/AddCraftPage.jsx';
 import UpdateCraft from './Components/UpdateCraft.jsx';
 import NotFoundPage from './Components/NotFoundPage.jsx';
 import ViewDetailsPage from './Components/ViewDetailsPage.jsx';
+import SubCategories from './Components/SubCategories.jsx';
 
 
 const router = createBrowserRouter([
@@ -56,7 +57,12 @@ const router = createBrowserRouter([
       {
         path:'/viewDetails/:id',
         element:<ProtectedRoute><ViewDetailsPage></ViewDetailsPage></ProtectedRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:5000/crafts/viewDetails/${params.id}`)
+      },
+      {
+        path:'/subcategories/:subcategory',
+        element:<ProtectedRoute><SubCategories></SubCategories></ProtectedRoute>,
+        // loader:({params})=>fetch(`http://localhost:5000/crafts/${params.subcategory}`)
       }
       
     ]

@@ -92,12 +92,12 @@ const AddCraftPage = () => {
               <label className="input-group">
                   <select name="subcategory" className="p-3 rounded-md  w-full focus:outline-none border-0 bg-white shadow">
                   <option value="" selected disabled hidden>Select</option>
-                    <option value="embroidery">Embroidery</option>
-                    <option value="knitting">Knitting & Crocheting</option>
-                    <option value="quilling">Quilting</option>
-                    <option value="breadwork">Beadwork</option>
+                    <option value="Embroidery">Embroidery</option>
+                    <option value="Knitting_and_Croccheting">Knitting & Crocheting</option>
+                    <option value="Quilting">Quilting</option>
+                    <option value="Beadwork">Beadwork</option>
                     <option value="tie_dyeing">Tie-Dyeing</option>
-                    <option value="macrame">Macrame</option>
+                    <option value="Macrame">Macrame</option>
                     </select>
               </label>
           </div>
