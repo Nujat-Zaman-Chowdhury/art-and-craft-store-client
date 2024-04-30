@@ -8,13 +8,13 @@ const ViewDetailsPage = () => {
    
     return (
         <div className="my-10 container mx-auto">
-            <h2 className="font-semibold text-center my-6 md:text-2xl">Details of <span className="font-lato text-orange-400">{subcategory}</span></h2>
+            <h2 className="font-semibold text-center my-6 text-xl md:text-2xl">Details of <span className="font-lato text-orange-400">{subcategory}</span></h2>
             <div className="flex flex-col md:flex-col-reverse lg:flex-row gap-3 items-center">
             
-                <div className="border-2 border-orange-400 rounded w-1/2">
+                <div className="border-2 border-orange-400 rounded lg:w-1/2">
                     <img className="h-[100vh] w-full object-cover object-center" src={image} alt="" />
                 </div>
-                <div className="w-1/2 bg-[#F9FAFB] p-5">
+                <div className="lg:w-1/2 bg-[#F9FAFB] p-5">
                     <div className="bg-white p-3">
                         <ul>
                             <li className="font-lato mt-3 font-bold text-lg">User: <span className="text-orange-500 font-medium">{name}</span> </li>

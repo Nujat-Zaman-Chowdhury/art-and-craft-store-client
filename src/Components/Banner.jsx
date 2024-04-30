@@ -51,8 +51,8 @@ const Banner = () => {
             <div className='h-[300px] md:h-[500px] bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("banner1.jpg")] bg-cover bg-no-repeat bg-center relative'>
                 <div className='flex justify-center items-center '>
                         <div className='space-y-3 absolute inset-0 flex flex-col justify-center items-center  mx-auto   text-white h-full py-6 md:py-12 w-full lg:w-3/4'>
-                                <h3 className='font-dancing text-2xl md:text-5xl font-bold text-orange-600'>Crafting Artistry Through Fabric</h3>
-                                <p className='text-center w-4/5 md:text-xl font-lato'>Embark on a journey through the vibrant world of Textile Arts, where every stitch tells a story. From intricate embroidery to cozy knitted creations.</p>
+                                <h3 className='font-dancing text-2xl md:text-5xl font-bold text-orange-600'>Delve into the world of textile arts</h3>
+                                <p className='text-center w-4/5 md:text-xl font-lato'> Whether you're drawn to vibrant geometric motifs, delicate floral embroidery, or intricate macrame knots, there's something to ignite your creative spark.</p>
                                 <button className='btn bg-orange-500 border-0 hover:bg-orange-600 text-white font-semibold'>Explore more <CiLocationArrow1 className='text-white font-bold'/></button>
                         </div>
                 </div>

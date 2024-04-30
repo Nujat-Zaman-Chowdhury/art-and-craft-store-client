@@ -30,7 +30,10 @@ const Navbar = () => {
     <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/"><IoHome /> Home</NavLink>
     <NavLink  className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/allArtCraft"><PiGooglePhotosLogo /> All Art & craft Items</NavLink>
     <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/addCraftItem"><IoIosAddCircle /> Add Craft Item</NavLink>
-    <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/my-art-and-craft"><RiFolderUserFill /> My Art&Craft List</NavLink>
+    {
+      user && 
+      <NavLink className={({isActive})=>isActive? "text-white btn bg-orange-400" : "btn border-0 shadow-none text bg-transparent text-orange-400 hover:bg-transparent"} to="/my-art-and-craft"><RiFolderUserFill /> My Art&Craft List</NavLink>
+    }
     </>
 
     const handleLogOut = ()=>{
@@ -38,9 +41,9 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar font-lato shadow">
-  <div className="navbar-start">
-    <div className="dropdown">
+        <div className="navbar p-3 flex flex-col md:flex-row font-lato shadow">
+  <div className="navbar-start w-full md:w-1/2">
+    <div className="dropdown z-30">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden p-0">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
@@ -48,7 +51,7 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <div className="flex items-center lg:gap-2 text-orange-400 font-dancing  text-pretty md:text-3xl font-bold btn bg-transparent border-0 shadow-none hover:bg-transparent">
+    <div className="flex items-center lg:gap-2 text-orange-400 font-dancing  text-pretty text-xl md:text-3xl font-bold btn bg-transparent border-0 shadow-none hover:bg-transparent">
         <PiFlowerTulipDuotone />
         <h2 className="">Artisanal Crafts</h2>
     </div>
@@ -58,8 +61,8 @@ const Navbar = () => {
       {navLinks}
     </ul>
   </div>
-  <div className="navbar-end gap-3" >
-  <label className="flex cursor-pointer gap-2">
+  <div className="navbar-end w-full md:w-1/2 gap-3 justify-between md:justify-end" >
+  <label className="flex  cursor-pointer gap-2">
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
   <input onChange={handleTheme} type="checkbox" value="synthwave" className="toggle theme-controller text-orange-400"/>
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>

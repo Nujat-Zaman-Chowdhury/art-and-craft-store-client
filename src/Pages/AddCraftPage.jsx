@@ -40,7 +40,7 @@ const AddCraftPage = () => {
         form.reset();
     }
     return (
-        <div className="bg-[#FCFFE0] p-20">
+        <div className="bg-[#FCFFE0] p-5 md:p-20">
             <HelmetProvider>
             <Helmet>
                 <meta charSet="utf-8" />

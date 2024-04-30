@@ -14,6 +14,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Helmet } from "react-helmet";
 
 
+
 //   const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
 const MyArtCraftList = () => {
    const {user} = useContext(AuthContext) || {};
@@ -70,9 +71,9 @@ const MyArtCraftList = () => {
                         icon: "success"
                 });
                     }
-                    const remainig = crafts.filter(craft=>craft._id !== _id )
-                    setCrafts(remainig)
-                    setFilteredCrafts(remainig);
+                    const remaining = crafts.filter(craft=>craft._id !== _id )
+                    setCrafts(remaining)
+                    setFilteredCrafts(remaining);
                 })
               
             }
@@ -107,7 +108,7 @@ const MyArtCraftList = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 container mx-auto">
             {
                 filteredCrafts.map(craft=>(
-                    <Card key={craft._id} className="w-full  shadow-lg">
+                    <Card key={craft._id} className="w-full  shadow-lg " >
       <CardHeader floated={false} color="blue-gray">
         <div className="flex justify-center py-4 h-[300px]">
         <img

@@ -46,10 +46,9 @@ const Register = () => {
             updateUserProfile(name,photo)
             .then(()=>{
                 navigate(from)
-                return toast("Register Successfully");
-            // console.log(result.user);
-            })
-            logOut();
+                return toast.success("Register Successfully");
+              })
+            logOut()
             }
         )
         .catch(error=>{

@@ -1,8 +1,24 @@
-# React + Vite
+# Artisanal Crafts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live site:
 
-Currently, two official plugins are available:
+- [Artisanal Crafts]()
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Selected Category
+
+- Textile Arts
+
+Features and Characteristics
+
+- Implemented authentication, to allow user login or sign up  securely and access personalized features.
+- Providing List of categories, users can see categories according to subcategories.
+- Users can read, add, view, update, and delete craft items.
+- Displayed a comprehensive database of listing art and crafts items.
+- By clicking view details user can see key information about a single art and craft item.
+- Website is designed to be responsive, Users can access and interact with the website seamlessly on mobile,tablet and desktop.
+
+Resources(npm packages)
+
+- [React-tooltip](https://react-tooltip.com/)
+- [Lott ie React](https://www.npmjs.com/package/lottie-react)
+
