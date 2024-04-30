@@ -18,7 +18,7 @@ const UpdateCraft = () => {
     const handleUpdate = e =>{
 
         e.preventDefault();
-        // const email = user?.email;
+
         const form = e.target;
         const image = form.image.value;
         const itemName = form.item_name.value;
@@ -32,7 +32,7 @@ const UpdateCraft = () => {
         const updatedItem = {image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
         // console.log(updatedItem);
 
-        fetch(`https://art-and-craft-store-server-six.vercel.app/crafts/${email}/${_id}`,{
+        fetch(`https://art-and-craft-store-server-six.vercel.app/crafts/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
