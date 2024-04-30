@@ -1,13 +1,13 @@
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const UpdateCraft = () => {
     const{user} = useContext(AuthContext)
     const loadedCraft = useLoaderData();
-    const {_id,email} = loadedCraft
+    const {_id} = loadedCraft
     // console.log(loader);
     
     // // console.log(loaded);
@@ -54,7 +54,7 @@ const UpdateCraft = () => {
         })
     }
     return (
-        <div className="bg-[#FCFFE0] p-20">
+        <div className="bg-grey-600 p-20">
         <h2 className="text-xl md:text-3xl font-extrabold font-lato text-center mb-10">Update Your Items</h2>
         <form onSubmit={handleUpdate}>
 

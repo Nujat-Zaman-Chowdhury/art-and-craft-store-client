@@ -27,7 +27,7 @@ const CategoriesSection = () => {
           <Link to={`/subcategories/${category.subcategory_name}`}
 
             key={category._id}
-            className="p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900 cursor-pointer"
+            className="p-6 rounded-md shadow-md  dark:bg-gray-50 dark:text-gray-900 cursor-pointer"
           >
             <img
               src={category.image}

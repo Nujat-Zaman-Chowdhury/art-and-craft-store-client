@@ -24,7 +24,7 @@ const AddCraftPage = () => {
         const stockStatus = form.stock_status.value;
         const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
 
-        fetch('https://art-and-craft-store-server-six.vercel.app/crafts',{
+        fetch('http://localhost:5000/crafts',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -40,7 +40,7 @@ const AddCraftPage = () => {
         form.reset();
     }
     return (
-        <div className="bg-[#FCFFE0] p-5 md:p-20">
+        <div className="bg-grey-600 p-20">
             <HelmetProvider>
             <Helmet>
                 <meta charSet="utf-8" />
