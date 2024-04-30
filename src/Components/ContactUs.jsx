@@ -4,7 +4,7 @@ const ContactUs = () => {
   return (
     <div className="md:p-10 shadow-sm">
       <div className="my-10">
-        <div className="bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('Contact.jpg')] h-full lg:h-[500px] bg-cover bg-center rounded-md ">
+        <div className="bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://i.ibb.co/dgdzWnk/Contact.jpg')] h-full lg:h-[500px] bg-cover bg-center rounded-md ">
           <div className="flex flex-col md:flex-row lg:justify-center gap-3  h-full">
             {/* left */}
             <div className="text-white lg:w-[40%] flex flex-col justify-center text-lg pl-5 py-5">

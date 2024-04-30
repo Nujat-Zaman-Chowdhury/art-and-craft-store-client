@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const CraftItemSection = () => {
 	const [CraftItems,setCraftItems] = useState([])
 	useEffect(()=>{
-		fetch('http://localhost:5000/crafts')
+		fetch('https://art-and-craft-store-server-six.vercel.app/crafts')
 		.then(res=>res.json())
 		.then(data=>{
 			setCraftItems(data)

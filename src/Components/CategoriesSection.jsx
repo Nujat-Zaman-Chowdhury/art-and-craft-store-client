@@ -8,7 +8,7 @@ const CategoriesSection = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch("https://art-and-craft-store-server-six.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

@@ -22,7 +22,7 @@ const MyArtCraftList = () => {
    const [filteredCrafts,setFilteredCrafts] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/crafts/${user?.email}`)
+        fetch(`https://art-and-craft-store-server-six.vercel.app/crafts/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
             setCrafts(data)
@@ -58,7 +58,7 @@ const MyArtCraftList = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/crafts/${user.email}/${_id}`,{
+                fetch(`https://art-and-craft-store-server-six.vercel.app/crafts/${user.email}/${_id}`,{
                     method:'DELETE'
                 })
                 .then(res=>res.json())

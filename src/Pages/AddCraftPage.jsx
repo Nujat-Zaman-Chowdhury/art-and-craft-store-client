@@ -24,7 +24,7 @@ const AddCraftPage = () => {
         const stockStatus = form.stock_status.value;
         const newItem = {name,email,image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
 
-        fetch('http://localhost:5000/crafts',{
+        fetch('https://art-and-craft-store-server-six.vercel.app/crafts',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

@@ -26,7 +26,7 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-            <div className='h-[300px] md:h-[500px] bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("banner3.jpg")] bg-cover bg-no-repeat bg-center relative'>
+            <div className='h-[300px] md:h-[500px] bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("https://i.ibb.co/hYy3Gp4/banner3.jpg")] bg-cover bg-no-repeat bg-center relative'>
                 <div className='flex justify-center items-center '>
                         <div className='space-y-3 absolute inset-0 flex flex-col justify-center items-center  mx-auto   text-white h-full py-6 md:py-12 w-full lg:w-3/4'>
                                 <h3 className='font-dancing text-2xl md:text-5xl font-bold text-orange-600'>Crafting Artistry Through Fabric</h3>
@@ -37,7 +37,7 @@ const Banner = () => {
             </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div className='h-[300px] md:h-[500px] bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("banner2.jpg")] bg-cover bg-no-repeat bg-center relative'>
+            <div className='h-[300px] md:h-[500px] bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("https://i.ibb.co/JQy6XMH/banner2.jpg")] bg-cover bg-no-repeat bg-center relative'>
                 <div className='flex justify-center items-center '>
                         <div className='space-y-3 absolute inset-0 flex flex-col justify-center items-center  mx-auto   text-white h-full py-6 md:py-12 w-full lg:w-3/4'>
                                 <h3 className='font-dancing text-2xl md:text-5xl font-bold text-orange-600'>Weaving Dreams into Reality</h3>
@@ -48,7 +48,7 @@ const Banner = () => {
             </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div className='h-[300px] md:h-[500px] bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("banner1.jpg")] bg-cover bg-no-repeat bg-center relative'>
+            <div className='h-[300px] md:h-[500px] bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("https://i.ibb.co/MDqNH54/banner1.jpg")] bg-cover bg-no-repeat bg-center relative'>
                 <div className='flex justify-center items-center '>
                         <div className='space-y-3 absolute inset-0 flex flex-col justify-center items-center  mx-auto   text-white h-full py-6 md:py-12 w-full lg:w-3/4'>
                                 <h3 className='font-dancing text-2xl md:text-5xl font-bold text-orange-600'>Delve into the world of textile arts</h3>

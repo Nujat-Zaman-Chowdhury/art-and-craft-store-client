@@ -32,7 +32,7 @@ const UpdateCraft = () => {
         const updatedItem = {image,itemName,subcategory,shortDescription,price,rating,customization,processingTime,stockStatus}
         // console.log(updatedItem);
 
-        fetch(`http://localhost:5000/crafts/${email}/${_id}`,{
+        fetch(`https://art-and-craft-store-server-six.vercel.app/crafts/${email}/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
