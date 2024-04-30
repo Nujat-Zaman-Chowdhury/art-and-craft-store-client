@@ -52,7 +52,7 @@ const Banner = () => {
                 <div className='flex justify-center items-center '>
                         <div className='space-y-3 absolute inset-0 flex flex-col justify-center items-center  mx-auto   text-white h-full py-6 md:py-12 w-full lg:w-3/4'>
                                 <h3 className='font-dancing text-2xl md:text-5xl font-bold text-orange-600'>Delve into the world of textile arts</h3>
-                                <p className='text-center w-4/5 md:text-xl font-lato'> Whether you're drawn to vibrant geometric motifs, delicate floral embroidery, or intricate macrame knots, there's something to ignite your creative spark.</p>
+                                <p className='text-center w-4/5 md:text-xl font-lato'> Whether you are drawn to vibrant geometric motifs, delicate floral embroidery, or intricate macrame knots, there's something to ignite your creative spark.</p>
                                 <button className='btn bg-orange-500 border-0 hover:bg-orange-600 text-white font-semibold'>Explore more <CiLocationArrow1 className='text-white font-bold'/></button>
                         </div>
                 </div>
