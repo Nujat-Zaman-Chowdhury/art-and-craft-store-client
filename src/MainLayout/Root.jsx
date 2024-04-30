@@ -12,7 +12,7 @@ const Root = () => {
             
             <Navbar></Navbar>
 
-            <div className="min-h-[100vh] overflow-hidden block relative pb-[40px] lg:pb-[60px]">
+            <div className="min-h-[100vh] overflow-hidden block relative">
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
